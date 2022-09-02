@@ -8,7 +8,7 @@ on:
 env:
   # キャッシュを強制クリアしたいときに任意の番号に変更してください
   CACHE-VERSION: a83dbc6
-  DAILY-STATE-FILE: ./tmp/daily-state.txt
+  DAILY-STATE-FILE: ./daily-state.txt
 
 jobs:
   test:
