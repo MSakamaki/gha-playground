@@ -32,7 +32,9 @@ jobs:
       - name: show state
         id: show-state
         run: |
-          cat ${{env.DAILY-STATE-FILE}}
+          if test -f "env.DAILY-STATE-FILE"; then
+              cat ${{env.DAILY-STATE-FILE}}
+          fi
       - name: save state
         id: save-state
         run: |
