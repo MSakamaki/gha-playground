@@ -30,7 +30,7 @@ jobs:
           restore-keys: |
             run-state-
       - name: show state
-        id: save-state
+        id: show-state
         run: |
           cat ${{env.DAILY-STATE-FILE}}
       - name: save state
