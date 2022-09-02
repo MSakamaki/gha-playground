@@ -1,0 +1,25 @@
+name: スケジュールのテスト()
+
+on:
+  # schedule:
+  #   - cron: '5 * * * *' # UTCなので+9してJSTにする
+  workflow_dispatch:
+env:
+  # キャッシュを強制クリアしたいときに任意の番号に変更してください
+  CACHE-VERSION: a83dbc6
+
+jobs:
+  end:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.7.0]
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+    steps:
+      - name: echo
+        id: show-date
+        run: echo "${{ steps.date.outputs.date }}"
+        
