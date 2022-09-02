@@ -34,6 +34,8 @@ jobs:
         run: |
           if test -f "env.DAILY-STATE-FILE"; then
               cat ${{env.DAILY-STATE-FILE}}
+          else 
+              echo "file not found!"
           fi
       - name: save state
         id: save-state
